@@ -1,0 +1,8 @@
+name: SwimmingFins
+version: '${project.version}'
+main: com.ashkiano.swimmingFins.SwimmingFins
+api-version: '1.16'
+authors: [AshKiano]
+commands:
+  swimmingFins:
+    description: Gives the player a pair of swimming fins.
