@@ -14,6 +14,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.Objects;
+
 public class SwimmingFinsListener implements Listener {
 
     private final JavaPlugin plugin;
@@ -58,7 +60,9 @@ public class SwimmingFinsListener implements Listener {
         }
 
         if (player.hasPotionEffect(PotionEffectType.DOLPHINS_GRACE)) {
-            player.removePotionEffect(PotionEffectType.DOLPHINS_GRACE);
+            if (Objects.requireNonNull(player.getPotionEffect(PotionEffectType.DOLPHINS_GRACE)).getDuration() > 820000) {
+                player.removePotionEffect(PotionEffectType.DOLPHINS_GRACE);
+            }
         }
     }
 }
